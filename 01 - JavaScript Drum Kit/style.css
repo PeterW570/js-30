@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background: url(samuel-fyfe-233543.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 body,html {
@@ -9,22 +9,31 @@ body,html {
   font-family: sans-serif;
 }
 
+
 .keys {
-  display: flex;
-  flex: 1;
+  display: grid;
   min-height: 100vh;
   align-items: center;
-  justify-content: center;
+  grid-template-columns: 1fr repeat(3, 10rem) 1fr;
+  grid-template-rows: 1fr repeat(3, 100px) 1fr;
+  grid-gap: 5px;
+}
+
+@media (min-width: 950px) {
+  .keys {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr;
+  }
 }
 
 .key {
+  justify-self: center;
   border: .4rem solid black;
   border-radius: .5rem;
-  margin: 1rem;
   font-size: 1.5rem;
   padding: 1rem .5rem;
   transition: all .07s ease;
-  width: 10rem;
+  width: 8rem;
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.4);
@@ -47,4 +56,10 @@ kbd {
   text-transform: uppercase;
   letter-spacing: .1rem;
   color: #ffc600;
+}
+
+#photo-credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
